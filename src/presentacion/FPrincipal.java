@@ -17,21 +17,29 @@ import javax.swing.SwingConstants;
 public class FPrincipal extends JFrame{
 	
 	private PFormulario pFormulario;
+	private PLienzo pLienzo;
+	int figura;
 	
 	
-	public FPrincipal() {
+	
+	public FPrincipal(int figura) {
 		this.setTitle("Lista Doble");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(800, 600);
+		this.setTitle("Daniel Vergara");
 		this.setLayout(new BorderLayout());
 		this.pFormulario = new PFormulario();
+		this.pLienzo= new PLienzo(figura);
+		
 		this.add(this.pFormulario, BorderLayout.WEST);
+		this.add(this.pLienzo, BorderLayout.CENTER);
+		
 		
 		this.setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		new FPrincipal();
+		new FPrincipal(1);
 	}
 
 }
